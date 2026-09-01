@@ -1,0 +1,33 @@
+AGENTE CRM 2.0.0-SEGURO
+
+Protecoes aplicadas:
+
+- Configuracao protegida pelo DPAPI da maquina Windows.
+- Token opcional guardado somente como PBKDF2-HMAC-SHA256 com salt aleatorio.
+- Diretorio de instalacao acessivel somente por SYSTEM e Administradores.
+- Firewall restrito aos perfis Dominio e Privado, com IP do dashboard opcional.
+- Requisicoes aceitas somente de enderecos privados, loopback ou allowlist.
+- Rate limit, headers de seguranca, logs rotativos e erros internos ocultos.
+
+Instalacao compativel com o dashboard atual:
+
+  .\instalar_agente.ps1 -DashboardIp IP_DO_DASHBOARD
+
+Instalacao com token (exige que o dashboard envie X-Agente-Token):
+
+  .\instalar_agente.ps1 -DashboardIp IP_DO_DASHBOARD -ExigirToken
+
+Sem -ExigirToken, o agente continua compativel com o dashboard atual. A
+configuracao DPAPI e as demais protecoes permanecem ativas.
+
+O transporte permanece HTTP para compatibilidade com o painel existente. Use o
+token somente em rede privada confiavel ou VPN. Para criptografia de transporte,
+o dashboard e o agente precisarao ser migrados juntos para HTTPS.
+
+Arquivos operacionais em C:\AgenteCRM:
+
+  .security_config.dpapi
+  agente_crm.log
+
+Nunca copie o arquivo DPAPI para outra maquina: ele nao podera ser aberto fora
+do computador e da conta de seguranca usados na instalacao.

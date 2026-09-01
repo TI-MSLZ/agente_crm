@@ -1,0 +1,4 @@
+Set-Location "C:\agente_crm"
+
+Set-ExecutionPolicy -Scope Process Bypass
+.\instalar_agente.ps1

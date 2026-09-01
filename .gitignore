@@ -1,0 +1,83 @@
+# Python: cache, testes, cobertura e ambientes virtuais
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.venv/
+venv/
+env/
+
+# Segredos e configuracoes operacionais da loja
+# Nunca enviar estes arquivos ao GitHub.
+*.dpapi
+*.dpapi.*
+.config_sync_key*
+.env
+.env.*
+!.env.example
+
+# Configuracoes reais; os arquivos *.example.json continuam versionados.
+banco_syspdv.json
+firebird_caixas.json
+caixas_config.json
+!banco_syspdv.example.json
+!firebird_caixas.example.json
+!caixas_config.example.json
+
+# Chaves privadas, certificados com chave e cofres de credenciais
+*.key
+*.pem
+*.pfx
+*.p12
+*.jks
+*.keystore
+credentials*.json
+secrets*.json
+
+# Logs, bancos/cache locais e arquivos temporarios
+*.log
+*.log.*
+*.pid
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+*.swp
+*.swo
+*~
+
+# Builds, pacotes e instaladores gerados ou baixados
+build/
+dist/
+*.egg-info/
+*.whl
+*.zip
+*.7z
+*.rar
+*.exe
+*.msi
+
+# IDEs e sistema operacional
+.vscode/
+.idea/
+*.code-workspace
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Scripts PowerShell, documentacao, fontes Python, requirements e
+# arquivos *.example.json devem permanecer no repositorio.
